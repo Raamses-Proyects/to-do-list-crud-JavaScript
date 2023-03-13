@@ -18,3 +18,20 @@ export const sincronizarStorage = (nombre, array) => {
 export function limpiarForm(form) {
     form.reset()
 }
+
+export const formatearFecha = (fecha) => {
+    let nuevaFecha
+    if (!fecha.includes('T00:00:00.000Z')) {
+        // console.log(fecha.split('T')[0].split('-'));
+      nuevaFecha = new Date(fecha.split('-'))
+    } else {
+      nuevaFecha = new Date(fecha)
+    }
+    const opciones = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+    return nuevaFecha.toLocaleDateString('es-ES', opciones)
+}

@@ -1,5 +1,5 @@
 import { llenarInputs, ListaTareas, limpiarObjeto } from '../js/app.js'
-import { sincronizarStorage, limpiarForm } from '../helpers/helpers.js'
+import { sincronizarStorage, limpiarForm, formatearFecha } from '../helpers/helpers.js'
 import { TAREAS } from '../constantes/consts.js'
 
 
@@ -13,7 +13,7 @@ function Tareas({id, fecha, hora, tarea}) {
     parrafoFecha.classList.add('tareas__texto')
     const spanFecha = document.createElement('span')
     spanFecha.classList.add('tareas__span')
-    spanFecha.textContent = fecha
+    spanFecha.textContent = formatearFecha(fecha)
     parrafoFecha.appendChild(spanFecha)
 
     const parrafoHora = document.createElement('p')
