@@ -1,0 +1,236 @@
+:root {
+    --fuentePrincipal: 'Noto Sans', sans-serif;
+    --fuenteSecundaria: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --primario: #49bfed;
+    --primarioOscuro: #3a9fc7;
+    --grisClaro: #e1e1e1; 
+    --blanco: #FFF;
+    --verde: #9adf3e;
+    --verdeOscuro: #7bb82b;
+    --rojo: #d12626;
+    --rojoOscuro: #a51d1d;
+    --separacion: 5rem;
+  }
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    background-color: #e4ebee;
+  }
+  .contenedor {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 4.8rem;
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0 0 calc(var(--separacion) / 2);
+  }
+  h1 span {
+    color: var(--primario);
+  }
+  @media(min-width: 768px) {
+    h1 {
+      font-size: 5.8rem;
+    }
+  }
+  h2 {
+    margin: 5rem 0 calc(var(--separacion) / 2) 0;
+    position: relative;
+  }
+  h2::after {
+    position: absolute;
+    content: '';
+    background-color: var(--primario);
+    height: .5rem;
+    width: 15%;
+    top: 3.2rem;
+    left: 1px;
+    border-radius: .5rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  
+  /* PRINCIPAL */
+  @media(min-width: 768px) {
+    .principal__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc(var(--separacion) / 3);
+    }
+  }
+  
+  
+  
+  /* FORMULARIO */
+  .formulario__contenido {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+  .formulario__label {
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.7;
+  }
+  .formulario__input {
+    border: .2rem solid var(--grisClaro);
+    border-radius: 1rem;
+    font-family: var(--fuentePrincipal);
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: calc(var(--separacion) / 3);
+  }
+  .formulario__submit {
+    background-color: var(--primario);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    color: var(--blanco);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    transition-property: background-color;
+    transition-duration: .3s;
+  }
+  .formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--primarioOscuro);
+  }
+  .formulario__submit:focus {
+    border: .2rem solid var(--grisClaro);
+  }
+  
+  
+  
+  /* TAREAS */
+  .tareas__lista {
+    overflow-x: hidden;
+    max-height: 51.3rem;
+    padding: 0 1rem 0 0;
+    scroll-snap-type: x mandatory;
+  }
+  @media(min-width: 768px) {
+    .tareas__lista {
+      padding: 0 1rem;
+    }
+  }
+  .tareas__lista li {
+    margin-bottom: calc(var(--separacion) / 2);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px -2px rgb(0 0 0 / 50%);
+    background-color: var(--blanco);
+    scroll-snap-align: center;
+  }
+  .tareas__lista li:last-of-type {
+    margin-bottom: 0;
+  }
+  .tareas__texto {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .tareas__span {
+    font-weight: 400;
+  }
+  .tareas__acciones {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .tareas__button {
+    padding: 1rem 1.5rem;
+    border: none;
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition-property: background-color;
+    transition-duration: .3s;
+  }
+  .tareas__button::after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+    filter: invert(100%);
+  }
+  .tareas__button:hover {
+    cursor: pointer;
+  }
+  .tareas__button--editar {
+    background-color: var(--verde);
+  }
+  .tareas__button--editar:hover {
+    background-color: var(--verdeOscuro);
+  }
+  .tareas__button--editar::after {
+    background-image: url(../img/editar.svg);
+  }
+  .tareas__button--eliminar {
+    background-color: var(--rojo);
+  }
+  .tareas__button--eliminar:hover {
+    background-color: var(--rojoOscuro);
+  }
+  .tareas__button--eliminar::after {
+    background-image: url(../img/eliminar.svg);
+  }
+  
+  
+  
+  /* FOOTER */
+  .footer-line {
+    background-color: var(--primario);
+    height: 1.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  
+  
+  
+  /* UTILIDADES */
+  [class$="__input"]:focus {
+    border: .2rem solid var(--primario);
+    outline: 0 none;
+  }
+  .alerta {
+    text-align: center;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    padding: 1rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    margin: 1rem 0 1.3rem 0;
+  }
+  .alerta__texto {
+    margin: 0;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .mt-5 {
+    margin-top: var(--separacion);
+  }

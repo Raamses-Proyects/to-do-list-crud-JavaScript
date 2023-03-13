@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>To do lists - JS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js" type="module" defer></script>
+</head>
+<body>
+    <header class="mt-5">
+        <h1>To do <span>List</span></h1>
+    </header>
+
+    <main class="principal contenedor">
+        <div class="principal__grid">
+            <div class="formulario">
+                <h2>Ingresar datos</h2>
+
+                <form class="formulario__contenido">
+                    <label class="formulario__label" for="fecha">Fecha:</label>
+                    <input class="formulario__input" type="date" name="fecha" id="fecha">
+
+                    <label class="formulario__label" for="hora">Hora:</label>
+                    <input class="formulario__input" type="time" name="hora" id="hora">
+
+                    <label class="formulario__label" for="tarea">Descripción:</label>
+                    <textarea class="formulario__input" name="tarea" id="tarea" cols="30" rows="10"></textarea>
+                    
+                    <button class='formulario__submit' type="submit">Agregar Tarea</button>
+                </form>
+            </div>
+
+            <div class="tareas">
+                <h2>Lista de tareas</h2>
+
+                <ul class="tareas__lista">
+                    <!-- <li>
+                        <div class="tareas__datos">
+                            <p class="tareas__texto">Fecha: <span class="tareas__span">2023-06-01</span></p>
+                            <p class="tareas__texto">Hora: <span class="tareas__span">11:00</span></p>
+                            <p class="tareas__texto">Descripción: <span class="tareas__span">Muchas cosas por hacer</span></p>
+                        </div>
+                        <div class="tareas__acciones">
+                            <button class="tareas__button tareas__button--editar" type="button">Editar</button>
+                            <button class="tareas__button tareas__button--eliminar" type="button">Eliminar</button>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class='mt-5'>
+        <div class='footer-line'></div>
+    </footer>
+</body>
+</html>
